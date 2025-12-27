@@ -1,0 +1,116 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web Básica</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-globe"></i> Mi Sitio Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#servicios"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
+                    <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="inicio" class="hero">
+            <h2>Bienvenido a nuestro sitio</h2>
+            <p>Este es un ejemplo básico de una página HTML con CSS externo.</p>
+            <button class="btn-primary">Más información</button>
+        </section>
+
+        <section id="servicios" class="services">
+            <h2><i class="fas fa-cogs"></i> Nuestros Servicios</h2>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-laptop-code fa-3x"></i>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos y responsivos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                    <h3>Diseño Responsivo</h3>
+                    <p>Sitios que se adaptan a cualquier dispositivo.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>SEO</h3>
+                    <p>Optimización para motores de búsqueda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about">
+            <h2><i class="fas fa-info-circle"></i> Acerca de Nosotros</h2>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Oficina moderna">
+                <div class="about-text">
+                    <h3>Nuestra Historia</h3>
+                    <p>Somos una empresa dedicada al desarrollo web desde 2020. Creemos en la creación de experiencias digitales únicas y funcionales.</p>
+                    <p>Nuestro equipo está compuesto por profesionales apasionados por la tecnología y el diseño.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p></p>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Navegación suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
